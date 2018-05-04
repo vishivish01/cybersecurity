@@ -20,7 +20,7 @@ Time spent: **5** hours spent in total
     - Vulnerability types: Cross-Site Scripting (XSS)
     - Tested in version: 4.2
     - Fixed in version: 4.2.3
-  - [ ] GIF Walkthrough: <img src="https://imgur.com/R8Zvyxp" width="800">
+  - [ ] GIF Walkthrough: <img src="https://imgur.com/R8Zvyxp.gif" width="800">
   - [ ] Steps to recreate: An attacker would first log in with an account that has privileges of a Contributor or Author role. Then the attacker would attempt to create a new post on the site. The important key is for the attacker to use the HTML editor to create the post instead of the Visual Editor. The attacker would insert someting like `<a href="[caption code=">]</a><a title=" onmouseover=alert('test')  ">link</a>`. That HTML snippet would be processed and manipulated into `<a href="</a><a title=" onmouseover=alert('test')  ">link</a>` because the original snippet contained a WordPress shortcode. A shortcode is a technique for embedding a snippet of PHP code into the body of a page or other content item. As a result, when a viewer views the post, they see a link that doesn't really point to anything and when they hover their mouse over it, a XSS attack would be triggered.
   - [ ] Affected source code: N/A
 
@@ -29,7 +29,7 @@ Time spent: **5** hours spent in total
     - Vulnerability types: Privilege Escalation/Content Injection
     - Tested in version: 4.7
     - Fixed in version: 4.7.2
-  - [ ] GIF Walkthrough: <img src="https://imgur.com/zueys1G" width="800">
+  - [ ] GIF Walkthrough: <img src="https://imgur.com/zueys1G.gif" width="800">
   - [ ] Steps to recreate: First a user will view a post on a WordPress site. Through this vulnerability, a user will be able to duplicate a post just by appending alphanumeric characters the current post's URL and making a GET request to it. Interesting enough, the WordPress administrator would never know that the user created the duplicate post because it won't show up on their Posts dashboard.
   - [ ] Affected source code: N/A
 
