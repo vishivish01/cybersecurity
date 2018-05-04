@@ -11,7 +11,7 @@ Time spent: **5** hours spent in total
     - Vulnerability types: Cross-Site Scripting (XSS)
     - Tested in version: 4.2
     - Fixed in version: 4.2.1
-  - [ ] GIF Walkthrough: <img src="https://imgur.com/meljHFM" width="800">
+  - [ ] GIF Walkthrough: <img src="https://imgur.com/meljHFM.gif" width="800">
   - [ ] Steps to recreate: As an unauthenticated user to a WordPress website, reply (comment) on a post with an HTML anchor tag with a title attribute.     Inside the attribute quotes, add a JavaScript event handler along with some dummy text that must be at least 64KB long. The reason for the long         text is that when it is inserted into the database, it will be truncated. The truncation results in a malformed HTML element being generated on the page. After the comment has been submitted and the post viewed again, the JavaScript code will be executed resulting in an XSS attack.
   - [ ] Affected source code: N/A
 
