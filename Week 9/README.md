@@ -11,7 +11,7 @@ In this assignment, I stood up a basic honeypot and observed its effectiveness a
 - Having at least one attack against the honeypot that can be detected or logged in a way that captures information about the attack or the attacker
 
 ### Setup
-For this experiment, I utilized an open-source project called Modern Honey Network (MHN). In MHN architecture, there is a single administrator VM which is used to deploy, manage and collect information from the honeypots. These honeypots are deployed as separate VMs and can be on the same network, such as in my case. Thus to run MHN, I had to setup at least two VMs: the single Admin VM and at least one Honeypot VM. When deploying the virtual machines, I also had to make sure I was able to access the machines via SSH.
+For this experiment, I utilized an open-source project called Modern Honey Network (MHN). In MHN architecture, there is a single administrator VM which is used to deploy, manage and collect information from the honeypots. These honeypots are deployed as separate VMs and can be on the same network, such as in my case. Thus to run MHN, I had to setup at least two VMs: the single Admin VM and at least one honeypot VM. When deploying the virtual machines, I also had to make sure I was able to access the machines via SSH.
 
 To get this experiment going, I provisioned a VM on Google Cloud Platform using their Compute Engine technology - their version of infrastructure as a service (IaaS). On that machine, I installed the MHN admin application which is a Flask application that exposes an HTTP API that honeypot servers can use to:
 - Download a deploy script
@@ -20,15 +20,17 @@ To get this experiment going, I provisioned a VM on Google Cloud Platform using 
 
 Then I provisioned another virtual machine. This machine will be used to host the actual honeypot application. After having established SSH access to the new honeypot VM, I installed the honeypot application into the VM and wired it to connect back to the admin server.
 
-The honeypot that I chose to deploy is called Dionaea, which is a low-interaction honeypot. These honeypots might emulate a server capable of accepting SSH connections through a combination of exposed ports and decoy response. As a result, any attempted exploitations would quickly lead to a dead end for the attacker, perhaps revealing only an IP address and a few attempted commands to the honeypot's maintainer.
+The honeypot that I chose to deploy is called Dionaea, which is a low-interaction honeypot. These honeypots might emulate a server capable of accepting SSH connections through a combination of exposed ports and decoy responses. As a result, any attempted exploitations would quickly lead to a dead end for the attacker, perhaps revealing only an IP address and a few attempted commands to the honeypot's maintainer.
 
 ### Demonstration
 
-- [x] A basic writeup of the attack (what offensive tools were used, what specifically was detected by the honeypot)
-	- Summary: I used nmap to attack the target. Nmap is a hacking tool that sends malicious packets and records the responses of the Honeypot. This recorded on the MHN Server site. Whatever was caught in the honeypot is displayed in the Attacks section of the site where the date/time, sensor, country of origin, source IP address, destination port, protocol, and type of honeypot.
+- I used a network security tool called nmap to attack my honeypot. Nmap (Network Mapper) is a utility for network discovery. It uses raw IP packets in novel ways to determine what hosts are on a network. Unfortunately, this wasn't working on my honeypot. Even though my honeypot was getting thousands of attacks from external sources, it wouldn't pick up my IP address if I scanned it using my local machine. Whatever was intercepted by the honeypot is displayed in the Attacks section of the admin site where the date/time, sensor, country of origin, source IP address, destination port, protocol, and type of honeypot are listed.
 
-- [x] An example of the data captured by the honeypot (example: IDS logs including IP, request paths, alerts triggered)
-	- Included in repository (session.json)
+- Screenshot of attacks intercepted by my honeypot:
+<img src="https://imgur.com/BrqT2r9">
+- I deployed one sensor which accumulated 4,458 attacks at the time of writing:
+<img src="https://imgur.com/okp8l2W">
+- Included in repository (session.json) is a JSON export of the data collected: number of attacks, number of malware samples, etc.
 
 ## Notes
 
