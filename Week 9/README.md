@@ -28,8 +28,10 @@ The honeypot that I chose to deploy is called Dionaea, which is a low-interactio
 
 - Screenshot of attacks intercepted by my honeypot:
 <img src="https://imgur.com/BrqT2r9.jpg">
+
 - I deployed one sensor which accumulated 4,458 attacks at the time of writing:
 <img src="https://imgur.com/okp8l2W.jpg">
+
 - Included in repository (session.json) is a JSON export of the data collected: number of attacks, number of malware samples, etc.
 
 ## Notes
