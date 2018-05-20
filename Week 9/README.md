@@ -27,9 +27,9 @@ The honeypot that I chose to deploy is called Dionaea, which is a low-interactio
 - I used a network security tool called nmap to attack my honeypot. Nmap (Network Mapper) is a utility for network discovery. It uses raw IP packets in novel ways to determine what hosts are on a network. Unfortunately, this wasn't working on my honeypot. Even though my honeypot was getting thousands of attacks from external sources, it wouldn't pick up my IP address if I scanned it using my local machine. Whatever was intercepted by the honeypot is displayed in the Attacks section of the admin site where the date/time, sensor, country of origin, source IP address, destination port, protocol, and type of honeypot are listed.
 
 - Screenshot of attacks intercepted by my honeypot:
-<img src="https://imgur.com/BrqT2r9">
+<img src="https://imgur.com/BrqT2r9.jpg">
 - I deployed one sensor which accumulated 4,458 attacks at the time of writing:
-<img src="https://imgur.com/okp8l2W">
+<img src="https://imgur.com/okp8l2W.jpg">
 - Included in repository (session.json) is a JSON export of the data collected: number of attacks, number of malware samples, etc.
 
 ## Notes
