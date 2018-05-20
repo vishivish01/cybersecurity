@@ -36,7 +36,7 @@ The honeypot that I chose to deploy is called Dionaea, which is a low-interactio
 
 ## Notes
 
-Describe any challenges encountered while doing the work: N/A
+Describe any challenges encountered while doing the work: I wasn't able to scan my honeypot using my local machine and have my IP address show up in the admin console.
 
 ## License
 
